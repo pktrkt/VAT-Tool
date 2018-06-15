@@ -5,12 +5,19 @@ import uuid
 def lambda_handler(event, context):
     
     recordId = str(uuid.uuid4())
-    voice = event["voice"]
-    text = event["text"]
+    userName = event["userName"]
+    taxField1 = event["taxField1"]
+    taxField2 = event["taxField2"]
+    taxField3 = event["taxField3"]
+    taxField4 = event["taxField4"]
 
     print('Generating new DynamoDB record, with ID: ' + recordId)
-    print('Input Text: ' + text)
-    print('Selected voice: ' + voice)
+    print('User creating record: ' + userName)
+    print('Input Text: ' + taxField1)
+    print('Input Text: ' + taxField2)
+    print('Input Text: ' + taxField3)
+    print('Input Text: ' + taxField4)
+    
     
     #Creating new record in DynamoDB table
     dynamodb = boto3.resource('dynamodb')
@@ -18,17 +25,12 @@ def lambda_handler(event, context):
     table.put_item(
         Item={
             'id' : recordId,
-            'text' : text,
-            'voice' : voice,
-            'status' : 'PROCESSING'
+            'userName' : userName,
+            'taxField1' : taxField1,
+            'taxField2' : taxField2,
+            'taxField3' : taxField3,
+            'taxField4' : taxField4
         }
     )
-    
-    #Sending notification about new post to SNS
-#   client = boto3.client('sns')
-#    client.publish(
-#        TopicArn = os.environ['SNS_TOPIC'],
-#       Message = recordId
-#   )
     
     return recordId
