@@ -4,7 +4,6 @@
        {
            "Effect": "Allow",
            "Action": [
-                "polly:SynthesizeSpeech",
                 "dynamodb:Query",
                 "dynamodb:Scan",
                 "dynamodb:PutItem",
