@@ -1,0 +1,66 @@
+<html>
+  <head><title>A test VAT entry site</title>
+    <link rel="stylesheet" href="styles.css">
+
+  </head>
+  <body>
+  <h3>Hello, please complete the fields below</h3>
+
+    <div id="content">
+
+    UserName:
+    <input type="text" id="userName">
+    </br></br>
+
+	TaxField1:
+    <input type="text" id="taxField1">
+    
+	TaxField2:
+    <input type="text" id="taxField2">
+	</br>
+	
+	TaxField3:
+    <input type="text" id="taxField3">
+	
+	TaxField4:
+    <input type="text" id="taxField4">
+
+    <input type="submit" value="Post" id="uploadTax" class="buttons">
+    </br></br>
+	<span id="postIDreturned"></span>
+	
+    </br></br></br></br>
+      <h5>Query previous entries</h5> 
+	  </br>
+	  <input type="text" id="postId"> <input type="submit" class="buttons" value="Search" id="searchButton">
+      </br>
+    </div>
+
+
+
+      <table id="posts">
+        <colgroup>
+          <col style="width:10%">
+          <col style="width:10%">
+          <col style="width:20%">
+          <col style="width:20%">
+          <col style="width:20%">
+		  <col style="width:20%">
+        </colgroup>
+        <tbody>
+          <tr>
+            <th>Post ID</th>
+            <th>UserName</th>
+            <th>TaxField1</th>
+            <th>TaxField2</th>
+            <th>TaxField3</th>
+            <th>TaxField3</th>
+		  </tr>
+        </tbody>
+      </table>
+
+
+    <script src="scripts.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.0/jquery.min.js"></script>
+  </body>
+</html>
